@@ -1688,6 +1688,11 @@ v8-compile-cache@^2.0.0:
   resolved "https://registry.yarnpkg.com/v8-compile-cache/-/v8-compile-cache-2.3.0.tgz#2de19618c66dc247dcfb6f99338035d8245a2cee"
   integrity sha512-l8lCEmLcLYZh4nbunNZvQCJc5pv7+RCwa8q/LdUx8u7lsWvPDKmpodJAJNwkAhJC//dFY48KuIEmjtd4RViDrA==
 
+vue-async-computed@3.7.0:
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/vue-async-computed/-/vue-async-computed-3.7.0.tgz#1ca3fc2743c9e3d4399b506f3e107e2141fdc34c"
+  integrity sha512-TyP37QJZK8pvN14wxBcXtt9TOjkpYYdndklABZNH+X1ZjeyM/krndloiS1DeFUg95MqIi5wzjevOPu6UTcD7pg==
+
 vue-hot-reload-api@2.x:
   version "2.3.4"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz#532955cc1eb208a3d990b3a9f9a70574657e08f2"

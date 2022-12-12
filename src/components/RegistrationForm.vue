@@ -10,9 +10,9 @@
 
             <!-- Department -->
             <custom-select
-                v-model="department"
-                placeholder="Choose your department"
-                :data="$options.departments"
+                    v-model="department"
+                    placeholder="Choose your department"
+                    :data="$options.departments"
             />
 
             <!-- Level -->
@@ -50,7 +50,15 @@ export default {
         {key: 3, value: "Marketing"},
         {key: 4, value: "R&D"},
         {key: 5, value: "Sales"},
-        {key: 6, value: "QA"},
+        {key: 6, value: "Quality Assurance"},
+    ],
+
+    levels: [
+        {key: 1, icon: 'school', value: 'Trainee'},
+        {key: 2, icon: 'child_care', value: 'Junior'},
+        {key: 3, icon: 'person', value: 'Mid'},
+        {key: 4, icon: 'elderly', value: 'Senior'},
+        {key: 5, icon: 'accessibility', value: 'Leader'},
     ],
 
     data() {
