@@ -1,0 +1,39 @@
+// Override default variables
+$primary-500: #3949ab;
+$primary-600: #3949ab;
+$primary-700: #3949ab;
+
+@import "@picocss/pico/scss/pico";
+
+details[role="list"] {
+  summary[selected]:not([role]) {
+    color: #bbc6ce !important;
+  }
+
+  summary:not([role]) + ul > li {
+    cursor: pointer;
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  }
+
+    + small {
+      display: block;
+      margin: -14px 4px 16px 0;
+  }
+}
+
+body > main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: calc(100vh - 7rem);
+  padding: 1rem 0;
+}
+
+.material-symbols-outlined {
+  font-size: 18px !important;
+}
