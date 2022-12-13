@@ -34,6 +34,14 @@ body > main {
   padding: 1rem 0;
 }
 
+[data-theme="light"] {
+    details[role="list"] {
+        summary[selected]:not([role]) {
+            color: #000 !important;
+        }
+    }
+}
+
 .material-symbols-outlined {
   font-size: 18px !important;
 }
