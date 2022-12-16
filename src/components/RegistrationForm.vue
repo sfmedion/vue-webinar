@@ -9,28 +9,18 @@
             <input type="email" name="email" placeholder="Email address" required v-model="email">
 
             <!-- Department -->
-            <custom-select
-                    v-model="department"
-                    placeholder="Choose your department"
-                    :data="$options.departments"
-            />
+            <custom-select v-model="department" :data="$options.departments" lang_to="el"/>
 
             <!-- Level -->
-            <aside>
-                <details role="list" ref='level'>
-                    <summary :selected="!!level" aria-haspopup="listbox">
-                        {{ !!level ? level : 'Choose your level' }}
-                    </summary>
-                    <ul role="listbox" @click="selectLevel">
-                        <li><a value="Trainee"><span class="material-symbols-outlined">school</span> Trainee</a></li>
-                        <li><a value="Junior"><span class="material-symbols-outlined">child_care</span> Junior</a></li>
-                        <li><a value="Mid"><span class="material-symbols-outlined">person</span> Mid</a></li>
-                        <li><a value="Senior"><span class="material-symbols-outlined">elderly</span> Senior</a></li>
-                        <li><a value="Leader"><span class="material-symbols-outlined">accessibility</span> Leader</a>
-                        </li>
-                    </ul>
-                </details>
-            </aside>
+            <custom-select v-model="level" lang_to="hi" :data="$options.levels">
+                <template #placeholder>
+                    Choose your <u>level</u>
+                </template>
+
+                <template #item="{item}">
+                    <a :value="item.value"><span class="material-symbols-outlined">{{ item.icon }}</span> {{ item.value }}</a>
+                </template>
+            </custom-select>
 
             <!-- Button -->
             <button :disabled="!email || !department || !level" type="submit">
@@ -56,7 +46,7 @@ export default {
     levels: [
         {key: 1, icon: 'school', value: 'Trainee'},
         {key: 2, icon: 'child_care', value: 'Junior'},
-        {key: 3, icon: 'person', value: 'Mid'},
+        {key: 3, icon: 'person', value: 'Middle'},
         {key: 4, icon: 'elderly', value: 'Senior'},
         {key: 5, icon: 'accessibility', value: 'Leader'},
     ],
@@ -73,12 +63,6 @@ export default {
             this.department = "";
             this.email = "";
             this.level = "";
-        },
-        selectLevel(e) {
-            if (e.target.nodeName === 'A')
-                this.level = e.target.getAttribute('value');
-
-            this.$refs.level.removeAttribute('open');
         },
         submit() {
             console.log(this.email, this.department, this.level);
